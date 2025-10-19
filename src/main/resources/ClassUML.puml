@@ -1,0 +1,29 @@
+@startuml
+
+TaskController --> TaskService
+TaskService --> Task
+
+class Task {
+  - id : Long
+  - title : String
+  - completed : boolean
+}
+
+class TaskService {
+  - tasks : List<Task>
+  + getAllTasks() : List<Task>
+  + getTaskById(id : Long) : Optional<Task>
+  + addTask(task : Task) : Task
+  + deleteTask(id : Long) : boolean
+  + markAsCompleted(id : Long) : Optional<Task>
+}
+
+class TaskController {
+  - taskService : TaskService
+  + getAllTasks() : List<Task>
+  + getTask(id : Long) : Optional<Task>
+  + addTask(task : Task) : Task
+  + deleteTask(id : Long) : boolean
+  + markAsCompleted(id : Long) : Optional<Task>
+}
+@enduml
