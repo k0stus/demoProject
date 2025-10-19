@@ -19,12 +19,12 @@ public class TaskController {
 
     @GetMapping
     public List<Task> getAllTasks() {
-        return taskService.getAllTasks();
+        System.out.printlt(taskService.getAllTasks());
     }
 
     @GetMapping("/{id}")
     public Optional<Task> getTask(@PathVariable Long id) {
-        return taskService.getTaskById(id);
+        System.out.println("hello world");
     }
 
     @PostMapping
