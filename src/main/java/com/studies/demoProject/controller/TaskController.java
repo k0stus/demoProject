@@ -19,11 +19,13 @@ public class TaskController {
 
     @GetMapping
     public List<Task> getAllTasks() {
+        System.out.println("This is cherry pick test");
         return taskService.getAllTasks();
     }
 
     @GetMapping("/{id}")
     public Optional<Task> getTask(@PathVariable Long id) {
+        System.out.println("And this is as well");
         return taskService.getTaskById(id);
     }
 
