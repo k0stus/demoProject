@@ -25,7 +25,7 @@ public class TaskController {
 
     @GetMapping("/{id}")
     public Optional<Task> getTask(@PathVariable Long id) {
-        System.out.println("And this is as well");
+        System.out.println("hello world");
         return taskService.getTaskById(id);
     }
 
